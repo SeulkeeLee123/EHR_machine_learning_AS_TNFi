@@ -10,7 +10,11 @@ We recommend using miniconda as a package manager when executing these codes. Mi
 
 ### Environment setting
 
-
+python 3.7.5
+numpy 1.18.0
+keras 2.3.1
+tensorflow 2.0.0
+sklearn 0.22
 
 ## Before start the codes, you have to pre-check following.
 1) Your input file has to be tab delimited and including header.
