@@ -30,7 +30,7 @@ xgboost 1.1.0
 * We recommend the same variables we used, or you have to change the number of index in each code according to the number of variables in your own dataset.
 * Our original input data includes WBC count, hemoglobin, platelet count, AST, ALT, BUN, creatinine, ESR, CRP, age, sex, HLA-B27 positivity, weight, and height.
 
-Example:
+Example (All values in this example are virtual.):
 ```
 ID  WBC	Hb	Plt	AST	ALT	BUN	Cr	ESR	CRP	age	sex	HLA	Wt	Ht	group
 AS001	3.44	15.5	186	28	30	12.2	0.85	7	0.11	19.90	0	1	65	173.5	0
@@ -41,8 +41,6 @@ AS005	7.73	12.9	176	24	11	15.9	0.76	33	0.22	28.14	1	1	45.4	165.6	1
 AS006	9.82	11.3	264	11	11	28.8	1.24	72	1.88	38.63	1	1	50.15	160.6	1
 AS007	5.65	13.1	156	29	28	16.3	0.47	3	0.42	37.51	0	1	90.95	168.4	0
 ```
-* All values in the example are virtual data.
-
 
 ## (Optional) Input file modification
 If you want to change the input variables, be aware that part of code has to be changed according the form of the data (categorical: integer, continuous: float). 
