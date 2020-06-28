@@ -14,13 +14,9 @@ We recommend using miniconda as a package manager when executing these codes. Mi
 All software tests were done under the following environment setting, and we highly recommend making the miniconda environment to test codes.
 
 python 3.7.5
-
 numpy 1.18.0
-
 keras 2.3.1
-
 tensorflow 2.0.0
-
 sklearn 0.22
 
 
