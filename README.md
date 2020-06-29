@@ -57,8 +57,9 @@ for line in whole_data:
 path_to_data_file = 'PATH/TO/DATA/FILE'
 ```
 
-## Hyperparameter tuning
-The three codes below were used for hyperparameter tuning and comparing analysis.
+## Comparing analysis & hyperparameter tuning
+### ANN, RF, XGBoost
+The three codes below were used for the hyperparameter tuning and comparing analysis.
 ```
 001-2_run_ANN_hyperparameter_tuning.ipynb
 002-2_run_RF_hyperparameter_tuning.ipynb
@@ -79,13 +80,29 @@ The performance of each execution will be saved the files below.
 'XGBoost_hyperparameter_tuning.txt'
 ```
 
-Performances from each iteration will be saved independently. You have to compare the performances of each hyperparameter after 
+Performances from each iteration will be saved independently. You have to compare the performances of each hyperparameter after combining all three iterations.
 
-The two codes below were used for performance
-005-2_run_logistic_performance.ipynb
--rw-r--r--@     1 seulkeelee  staff     3945  6 24 22:23 005_logistic_regression_performance.ipynb
--rw-r--r--@     1 seulkeelee  staff      774  6 24 22:29 006-2_run_SVM_performance.ipynb
--rw-r--r--@     1 seulkeelee  staff     4172  6 24 22:30 006_SVM_performance.ipynb
+### Logistic regression, SVM
+The two codes below were used for the comparing analysis only. 
+```
+004-2_run_logistic_performance.ipynb
+005-2_run_SVM_performance.ipynb
+```
+
+Those codes actually execute the codes below.
+```
+004_logistic_regression_performance.ipynb
+005_SVM_performance.ipynb
+```
+
+The performance of each execution will be saved the files below.
+```
+'logistic_hyperparameter_tuning.txt'
+'SVM_hyperparameter_tuning.txt'
+```
+Unlike ANN, RF, and XGBoost, the two files only include performances of each iteration. 
+
+## Finding best model
 
 
 
