@@ -24,6 +24,7 @@ xgboost 1.1.0
 
 ## Input file preparation
 
+* Input file **should** be located in the same folder with codes, and the name has to be 'data_file.txt'.
 * Input file **must** be a tab delimited text file.
 * Input file **should** include a header row.
 * The first column **should** be a ID of each patient, and the last column **should** be a group of each patient (early TNF users or not).
@@ -51,5 +52,60 @@ for line in whole_data:
 ```
 * line[x]: x means the index number of each column.
 
+* If you want to change the name of input file or directory, you may change this part of code to your own input file.
+```
+path_to_data_file = 'PATH/TO/DATA/FILE'
+```
 
+## Hyperparameter tuning
+The three codes below were used for hyperparameter tuning and comparing analysis.
+```
+001-2_run_ANN_hyperparameter_tuning.ipynb
+002-2_run_RF_hyperparameter_tuning.ipynb
+003-2_run_XGBoost_hyperparameter_tuning.ipynb
+```
+
+Those codes actually execute the codes below.
+```
 001_ANN_hyperparameter_tuning.ipynb
+002_RF_hyperparameter_tuning.ipynb
+003_XGBoost_hyperparameter_tuning.ipynb
+```
+
+The performance of each execution will be saved the files below.
+```
+'ANN_hyperparameter_tuning.txt'
+'RF_hyperparameter_tuning.txt'
+'XGBoost_hyperparameter_tuning.txt'
+```
+
+Performances from each iteration will be saved independently. You have to compare the performances of each hyperparameter after 
+
+The two codes below were used for performance
+005-2_run_logistic_performance.ipynb
+-rw-r--r--@     1 seulkeelee  staff     3945  6 24 22:23 005_logistic_regression_performance.ipynb
+-rw-r--r--@     1 seulkeelee  staff      774  6 24 22:29 006-2_run_SVM_performance.ipynb
+-rw-r--r--@     1 seulkeelee  staff     4172  6 24 22:30 006_SVM_performance.ipynb
+
+
+
+## Change the path of input and output files of the codes.
+
+* The path of input and output files **must** be changed according to the individual environment.
+
+The six codes below has the same categories to be changed.
+```
+001_ANN_hyperparameter_tuning.ipynb
+002_RF_hyperparameter_tuning.ipynb
+003_XGBoost_hyperparameter_tuning.ipynb
+004_random_performance.ipynb
+005_logistic_regression_performance.ipynb
+006_SVM_performance.ipynb
+```
+
+You have to change the 
+```
+path_to_data_file = 'PATH/TO/DATA/FILE'
+performance_file = 'PATH/TO/PERFORMANCE/FILE'
+```
+
