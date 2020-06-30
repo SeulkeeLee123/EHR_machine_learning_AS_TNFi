@@ -58,6 +58,12 @@ path_to_data_file = 'PATH/TO/DATA/FILE'
 ```
 
 ## Comparing analysis & hyperparameter tuning
+'hyperparameter_comparing' folder includes codes for comparing various methods and hyperparameter setting.
+Before executing the codes, change the working directory first.
+```
+cd hyperparameter_comparing
+```
+
 ### ANN, RF, XGBoost
 The three codes below were used for the hyperparameter tuning and comparing analysis.
 ```
@@ -116,29 +122,57 @@ The performance of each execution will be saved the files below. The location of
 ```
 Unlike ANN, RF, and XGBoost, the two files only include performances of each iteration. 
 
+After finishing the hyperparameter setting and comparing various machine learning methods, return to the upper directory.
+```
+cd ../
+```
+
 ## Fixing the seed number
 For further analysis, the best performing model has to be found. The performances are changed a little bit according to the seed number used in cross validation. To calculate confidence intervals and feature importances, we have to fix the seed number.
-
-
-
-
-## Change the path of input and output files of the codes.
-
-* The path of input and output files **must** be changed according to the individual environment.
-
-The six codes below has the same categories to be changed.
+Before executing the codes, change the working directory first.
 ```
-001_ANN_hyperparameter_tuning.ipynb
-002_RF_hyperparameter_tuning.ipynb
-003_XGBoost_hyperparameter_tuning.ipynb
-004_random_performance.ipynb
-005_logistic_regression_performance.ipynb
-006_SVM_performance.ipynb
+cd fixed_model
 ```
 
-You have to change the 
+* First, make the folder which saves ANN models.
 ```
-path_to_data_file = 'PATH/TO/DATA/FILE'
-performance_file = 'PATH/TO/PERFORMANCE/FILE'
+mkdir ANN_model
 ```
 
+* Before you execute the best model code, you can change the hyperparameter set according to your own best setting.
+* Otherwise, our default setting will be applied to the following analysis.
+```
+# You have to modify this part by your own hyperparameter set.
+n_nodes = 60
+n_layers = 5
+lr = 0.00003
+n_batch = 20
+n_epochs = 200
+```
+* Our default setting of hyperparameter is: 1) 60 hidden nodes in each hidden layer, 2) 5 hidden layers, 3) 0.00003 for learning rate, 4) 20 for batch size, and 5) 200 for epoch times.
+
+* After modifying the hyperparameter set, use the following commands for execution:
+```
+ipython 011_ANN_best_model.ipynb
+```
+
+You will get 'ANN_best_model.txt' which includes the performances of cross-validation using each random seed. You have to use the seed number for further evaluation.
+
+## Confidence interval
+* You can modify the path of all input and output files.
+* You **must** change the n_seed as you got from the '011_ANN_best_model.ipynb' result.
+```
+# You can modify file names and path to files as you need.
+path_to_data_file = '../data_file.txt'
+test_index_file = 'ANN_test_index_file.txt'
+train_index_file = 'ANN_train_index_file.txt'
+saved_model_folder = 'ANN_model'
+performance_file = 'ANN_CI.txt'
+n_seed = 1 # Insert the seed of your best model
+```
+
+* After modifying the seed number, use the following commands for execution:
+```
+ipython 011-2_ANN_CI.ipynb
+```
+* You will get confidence interval of the best ANN model. It will be saved at the 'ANN_CI.txt' file.
