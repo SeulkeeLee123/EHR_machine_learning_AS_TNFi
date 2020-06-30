@@ -24,7 +24,7 @@ xgboost 1.1.0
 
 ## Input file preparation
 
-* Input file **should** be located in the same folder with codes, and the name has to be 'data_file.txt'.
+* Input file **should** be located in the same folder with readme file, and the name has to be 'data_file.txt'.
 * Input file **must** be a tab delimited text file.
 * Input file **should** include a header row.
 * The first column **should** be a ID of each patient, and the last column **should** be a group of each patient (early TNF users or not).
@@ -65,6 +65,12 @@ The three codes below were used for the hyperparameter tuning and comparing anal
 002-2_run_RF_hyperparameter_tuning.ipynb
 003-2_run_XGBoost_hyperparameter_tuning.ipynb
 ```
+For execution, use the following commands:
+```
+ipython 001-2_run_ANN_hyperparameter_tuning.ipynb
+ipython 002-2_run_RF_hyperparameter_tuning.ipynb
+ipython 003-2_run_XGBoost_hyperparameter_tuning.ipynb
+```
 
 Those codes actually execute the codes below.
 ```
@@ -73,7 +79,7 @@ Those codes actually execute the codes below.
 003_XGBoost_hyperparameter_tuning.ipynb
 ```
 
-The performance of each execution will be saved the files below.
+The performance of each execution will be saved the files below. The location of the files will be inside the hyperparameter_comparing folder in the default setting.
 ```
 'ANN_hyperparameter_tuning.txt'
 'RF_hyperparameter_tuning.txt'
@@ -91,6 +97,11 @@ The two codes below were used for the comparing analysis only.
 004-2_run_logistic_performance.ipynb
 005-2_run_SVM_performance.ipynb
 ```
+For execution, use the following commands:
+```
+ipython 004-2_run_logistic_performance.ipynb
+ipython 005-2_run_SVM_performance.ipynb
+```
 
 Those codes actually execute the codes below.
 ```
@@ -98,7 +109,7 @@ Those codes actually execute the codes below.
 005_SVM_performance.ipynb
 ```
 
-The performance of each execution will be saved the files below.
+The performance of each execution will be saved the files below. The location of the files will be inside the hyperparameter_comparing folder in the default setting.
 ```
 'logistic_hyperparameter_tuning.txt'
 'SVM_hyperparameter_tuning.txt'
@@ -106,7 +117,9 @@ The performance of each execution will be saved the files below.
 Unlike ANN, RF, and XGBoost, the two files only include performances of each iteration. 
 
 ## Fixing the seed number
-For further analysis, the best performing model has to be found. The performances are changed a little bit according to the seed number used in 
+For further analysis, the best performing model has to be found. The performances are changed a little bit according to the seed number used in cross validation. To calculate confidence intervals and feature importances, we have to fix the seed number.
+
+
 
 
 ## Change the path of input and output files of the codes.
