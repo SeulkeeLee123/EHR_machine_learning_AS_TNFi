@@ -82,6 +82,9 @@ The performance of each execution will be saved the files below.
 
 Performances from each iteration will be saved independently. You have to compare the performances of each hyperparameter after combining all three iterations.
 
+#### Hyperparameter setting
+From the saved files for hyperparameter tuning, you can find the best performing hyperparameter set. In following analysis, your own hyperparameter set has to be used that is compatible with the input data.
+
 ### Logistic regression, SVM
 The two codes below were used for the comparing analysis only. 
 ```
@@ -102,8 +105,8 @@ The performance of each execution will be saved the files below.
 ```
 Unlike ANN, RF, and XGBoost, the two files only include performances of each iteration. 
 
-## Finding best model
-
+## Fixing the seed number
+For further analysis, the best performing model has to be found. The performances are changed a little bit according to the seed number used in 
 
 
 ## Change the path of input and output files of the codes.
